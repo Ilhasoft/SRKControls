@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 	s.homepage		=	"http://sagarrkothari.com"
 	s.license		=	{ :type	=> 'BSD' }
 	s.platform		=	:ios, '7.0'
-    s.source        =   { :git => "sag333ar@gmail.com:/User/sagarkothari/SRKControls", :branch => 'master' }
+    s.source        =   { :git => 'https://github.com/sag333ar/SRKControls.git', :branch => 'master' }
     s.subspec 'Controls' do |controls|
         controls.source_files	=	'SRKControls/*.{h,m}'
     end
