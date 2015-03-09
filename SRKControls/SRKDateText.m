@@ -8,9 +8,7 @@
 
 #import "SRKDateText.h"
 
-@interface SRKDateText () <UIActionSheetDelegate>  {
-	UIActionSheet *action;
-}
+@interface SRKDateText () <UIActionSheetDelegate>
 @property (nonatomic, strong) UIDatePicker *datePicker;
 @property (nonatomic, strong) UIView *viewOfPicker;
 @property (nonatomic, strong) UIToolbar *tBar;
@@ -36,8 +34,8 @@
 		
 		[self.viewOfPicker addSubview:self.datePicker];
 		
-		self.tBar=[[UIToolbar alloc] init ];
-		UIBarButtonItem *itemCancel=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(clear)];
+		self.tBar=[[UIToolbar alloc] init];
+		UIBarButtonItem *itemCancel=[[UIBarButtonItem alloc] initWithTitle:@"Clear" style:UIBarButtonItemStyleDone target:self action:@selector(clear)];
 		UIBarButtonItem *itemFlex=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
 		UIBarButtonItem *itemDone=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done)];
 		[self.tBar setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin];
@@ -76,20 +74,18 @@
 
 - (void)clear {
 	[self setText:@""];
-	[action dismissWithClickedButtonIndex:0 animated:YES];
+    [self.v removeFromSuperview];
 }
 
 - (void)done {
-	[action dismissWithClickedButtonIndex:0 animated:YES];
+    [self.v removeFromSuperview];
 }
 
-- (void)changeToolBarColor:(UIColor*)color
-{
+- (void)changeToolBarColor:(UIColor*)color {
 	[self.tBar setTintColor:color];
 }
 
-- (void)datechanged:(UIDatePicker*)datePicker 
-{
+- (void)datechanged:(UIDatePicker*)datePicker  {
 	[self.delegateVCtr srkDateText:self dateChangedTo:[datePicker date]];
 }
 

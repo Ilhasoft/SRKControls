@@ -15,6 +15,9 @@
 - (NSString*)srkComboText:(SRKComboText*)srkComboText textForRow:(NSUInteger)row;
 - (NSInteger)srkComboTextNumberOfOptions:(SRKComboText*)srkComboText;
 - (void)srkComboText:(SRKComboText*)srkComboText didSelectRow:(NSUInteger)row;
+@optional
+- (void)btnDoneTapped:(SRKComboText*)srkComboText;
+- (void)btnCancelTapped:(SRKComboText*)srkComboText;
 @end
 
 @interface SRKComboText : UITextField

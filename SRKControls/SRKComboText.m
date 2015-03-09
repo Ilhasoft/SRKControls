@@ -8,8 +8,7 @@
 
 #import "SRKComboText.h"
 
-@interface SRKComboText () <UIPickerViewDelegate,UIPickerViewDataSource,UIActionSheetDelegate>
-@property (nonatomic, strong) UIActionSheet *action;
+@interface SRKComboText () <UIPickerViewDelegate,UIPickerViewDataSource>
 @property (nonatomic, strong) UIView *v;
 @property (nonatomic, strong) UIView *viewOfPicker;
 @property (nonatomic, strong) UIPickerView *pkrView;
@@ -36,8 +35,8 @@
 		
 		[self.viewOfPicker addSubview:self.pkrView];
 		
-		self.tBar=[[UIToolbar alloc] init ]; //WithFrame:CGRectMake(0, 0, self.delegateVCtr.view.frame.size.width, 44)];
-		UIBarButtonItem *itemCancel=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(clear)];
+		self.tBar=[[UIToolbar alloc] init];
+        UIBarButtonItem *itemCancel=[[UIBarButtonItem alloc] initWithTitle:@"Clear" style:UIBarButtonItemStyleDone target:self action:@selector(clear)];
 		UIBarButtonItem *itemFlex=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
 		UIBarButtonItem *itemDone=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done)];
 		[self.tBar setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin];
@@ -90,12 +89,10 @@
 - (void)clear {
 	[self setText:@""];
     [self.v removeFromSuperview];
-	[self.action dismissWithClickedButtonIndex:0 animated:YES];
 }
 
 - (void)done {
     [self.v removeFromSuperview];
-	[self.action dismissWithClickedButtonIndex:0 animated:YES];
 }
 
 - (void)changeToolBarColor:(UIColor*)color {
