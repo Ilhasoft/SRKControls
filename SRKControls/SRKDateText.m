@@ -60,7 +60,11 @@
 	
 	if(self.date) {
 		self.datePicker.date=self.date;
-	}
+        [self.delegateVCtr srkDateText:self dateChangedTo:self.date];
+    } else {
+        self.datePicker.date=[NSDate date];
+        [self.delegateVCtr srkDateText:self dateChangedTo:[NSDate date]];
+    }
 	
     self.v = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.v.backgroundColor = [UIColor colorWithRed:0.85 green:0.85 blue:0.85 alpha:0.45];
