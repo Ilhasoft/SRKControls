@@ -26,5 +26,6 @@
 
 - (void)showOptions;
 - (void)changeToolBarColor:(UIColor*)color;
+- (void)changePickerBackgroundColor:(UIColor *)color;
 
 @end

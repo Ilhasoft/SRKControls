@@ -99,4 +99,8 @@
 	[self.tBar setTintColor:color];
 }
 
+- (void)changePickerBackgroundColor:(UIColor *)color {
+    self.pkrView.backgroundColor = color;
+}
+
 @end

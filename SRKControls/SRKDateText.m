@@ -93,4 +93,8 @@
 	[self.delegateVCtr srkDateText:self dateChangedTo:[datePicker date]];
 }
 
+- (void)changePickerBackgroundColor:(UIColor *)color {
+    self.datePicker.backgroundColor = color;
+}
+
 @end

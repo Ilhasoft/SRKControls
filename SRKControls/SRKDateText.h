@@ -38,4 +38,7 @@ typedef enum {
 
 - (void)setDate:(NSDate *)date animated:(BOOL)animated;
 - (void)showDatePicker;
+- (void)changeToolBarColor:(UIColor*)color;
+- (void)changePickerBackgroundColor:(UIColor *)color;
+
 @end
