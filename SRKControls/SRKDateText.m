@@ -73,16 +73,29 @@
     self.v.autoresizesSubviews = NO;
     self.datePicker.backgroundColor = [UIColor lightGrayColor];
     [self.v addSubview:self.viewOfPicker];
+    CATransition *tr=[CATransition  animation];
+    tr.duration=0.5;
+    tr.timingFunction=[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    tr.type=kCATransitionPush;
+    tr.subtype = kCATransitionFromTop;
+    tr.delegate=self;
     [[[UIApplication sharedApplication] keyWindow].rootViewController.view addSubview:self.v];
+    [self.v.layer addAnimation:tr forKey:nil];
 }
 
 - (void)clear {
-	[self setText:@""];
+    [self setText:@""];
     [self.v removeFromSuperview];
+    if ([self.delegateVCtr respondsToSelector:@selector(btnCancelTapped:)]) {
+        [self.delegateVCtr btnCancelTapped:self];
+    }
 }
 
 - (void)done {
-    [self.v removeFromSuperview];
+    [self.v removeFromSuperview];    
+    if ([self.delegateVCtr respondsToSelector:@selector(btnDoneTapped:)]) {
+        [self.delegateVCtr btnDoneTapped:self];
+    }
 }
 
 - (void)changeToolBarColor:(UIColor*)color {

@@ -21,7 +21,9 @@ typedef enum {
 
 @required
 - (void)srkDateText:(SRKDateText*)srkDateText dateChangedTo:(NSDate*)date;
-
+@optional
+- (void)btnDoneTapped:(SRKDateText*)srkComboText;
+- (void)btnCancelTapped:(SRKDateText*)srkComboText;
 @end
 
 
