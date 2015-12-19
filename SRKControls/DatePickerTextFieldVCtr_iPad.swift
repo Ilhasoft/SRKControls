@@ -38,6 +38,7 @@ public class DatePickerTextField_iPad: UITextField {
 			if let bundle = NSBundle(URL: bundleURL) {
 				self.objDatePickerTextFieldVCtr_iPad = DatePickerTextFieldVCtr_iPad(nibName: "DatePickerTextFieldVCtr_iPad", bundle: bundle)
 				self.objDatePickerTextFieldVCtr_iPad?.modalPresentationStyle = .Popover
+				self.objDatePickerTextFieldVCtr_iPad?.popoverPresentationController?.delegate = self.objDatePickerTextFieldVCtr_iPad
 				self.objDatePickerTextFieldVCtr_iPad?.refDatePickerTextField = self
 				if let btn = self.delegateForDatePickerTextField?.datePickerTextFieldFromBarButton(self) {
 					self.objDatePickerTextFieldVCtr_iPad?.popoverPresentationController?.barButtonItem = btn
@@ -57,7 +58,7 @@ public class DatePickerTextField_iPad: UITextField {
 	}
 }
 
-class DatePickerTextFieldVCtr_iPad: UIViewController {
+class DatePickerTextFieldVCtr_iPad: UIViewController, UIPopoverPresentationControllerDelegate {
 	
 	@IBOutlet weak var pickerView: UIDatePicker!
 	@IBOutlet weak var toolBar: UIToolbar!
@@ -101,5 +102,9 @@ class DatePickerTextFieldVCtr_iPad: UIViewController {
 	@IBAction func btnCancelTapped(sender: UIBarButtonItem) {
 		self.refDatePickerTextField?.delegateForDatePickerTextField?.datePickerTextFieldDidTappedCancel(self.refDatePickerTextField!)
 		self.dismissViewControllerAnimated(true, completion: nil)
+	}
+	
+	func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+		return UIModalPresentationStyle.None
 	}
 }

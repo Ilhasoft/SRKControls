@@ -3,7 +3,7 @@
 #
 
 Pod::Spec.new do |s|
-	s.version		=	'2.0.5'
+	s.version		=	'2.0.6'
 	s.name			=	'SRKControls'
     s.summary       =   'A Custom control to turn UITextfield to item-picker & date-picker.'
 	s.authors		=	{ "Sagar Kothari" => "sag333ar@gmail.com" }

@@ -34,6 +34,7 @@ public class ComboTextField_iPad: UITextField {
 			if let bundle = NSBundle(URL: bundleURL) {
 				self.objComboTextFieldVCtr_iPad = ComboTextFieldVCtr_iPad(nibName: "ComboTextFieldVCtr_iPad", bundle: bundle)
 				self.objComboTextFieldVCtr_iPad?.modalPresentationStyle = .Popover
+				self.objComboTextFieldVCtr_iPad?.popoverPresentationController?.delegate = self.objComboTextFieldVCtr_iPad
 				self.objComboTextFieldVCtr_iPad?.refComboTextField_iPad = self
 				if let btn = self.delegateForComboTextField?.comboTextFieldFromBarButton(self) {
 					self.objComboTextFieldVCtr_iPad?.popoverPresentationController?.barButtonItem = btn
@@ -51,7 +52,7 @@ public class ComboTextField_iPad: UITextField {
 	}
 }
 
-class ComboTextFieldVCtr_iPad: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class ComboTextFieldVCtr_iPad: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIPopoverPresentationControllerDelegate {
 
 	@IBOutlet weak var pickerView: UIPickerView!
 	@IBOutlet weak var toolBar: UIToolbar!
@@ -99,5 +100,9 @@ class ComboTextFieldVCtr_iPad: UIViewController, UIPickerViewDataSource, UIPicke
 	@IBAction func btnCancelTapped(sender: UIBarButtonItem) {
 		self.refComboTextField_iPad?.delegateForComboTextField?.comboTextFieldDidTappedCancel(self.refComboTextField_iPad!)
 		self.dismissViewControllerAnimated(true, completion: nil)
+	}
+	
+	func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+		return UIModalPresentationStyle.None
 	}
 }
