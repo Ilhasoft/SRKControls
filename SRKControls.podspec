@@ -3,17 +3,17 @@
 #
 
 Pod::Spec.new do |s|
-	s.version		=	'1.0.3'
+	s.version		=	'2.0.1'
 	s.name			=	'SRKControls'
     s.summary       =   'A Custom control to turn UITextfield to item-picker & date-picker.'
 	s.authors		=	{ "Sagar Kothari" => "sag333ar@gmail.com" }
 	s.homepage		=	"http://sagarrkothari.com"
 	s.license		=	{ :type	=> 'BSD' }
-	s.platform		=	:ios, '7.0'
+	s.platform		=	:ios, '8.0'
     s.requires_arc  =   true
-    s.source        =   { :git => 'https://github.com/sag333ar/SRKControls.git', :branch => 'master', :tag => '1.0.3' }
+    s.source        =   { :git => 'https://github.com/sag333ar/SRKControls.git', :branch => 'master', :tag => s.version }
     s.subspec 'Controls' do |controls|
-        controls.source_files	=	'SRKControls/*.{h,m}'
+        controls.source_files	=	'SRKControls/*.{swift,xib}'
     end
 	
 	s.frameworks = 'UIKit', 'Foundation', 'QuartzCore'
