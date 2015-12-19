@@ -29,7 +29,7 @@ import UIKit
 }
 
 public class DatePickerTextField_iPad: UITextField {
-	weak internal var delegateForDatePickerTextField:DatePickerTextField_iPad_delegate?
+	public weak var delegateForDatePickerTextField:DatePickerTextField_iPad_delegate?
 	var objDatePickerTextFieldVCtr_iPad: DatePickerTextFieldVCtr_iPad?
 	
 	public func showOptions() {

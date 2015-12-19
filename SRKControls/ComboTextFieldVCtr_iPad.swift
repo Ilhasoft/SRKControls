@@ -25,7 +25,7 @@ import UIKit
 }
 
 public class ComboTextField_iPad: UITextField {
-	weak internal var delegateForComboTextField:ComboTextField_iPad_delegate?
+	public weak var delegateForComboTextField:ComboTextField_iPad_delegate?
 	var objComboTextFieldVCtr_iPad: ComboTextFieldVCtr_iPad?
 	
 	public func showOptions() {
