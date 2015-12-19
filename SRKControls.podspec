@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
     s.requires_arc  =   true
     s.source        =   { :git => 'https://github.com/sag333ar/SRKControls.git', :branch => 'master', :tag => s.version }
     s.subspec 'Controls' do |controls|
-        controls.source_files	=	'SRKControls/*.{swift}
+        controls.source_files	=	'SRKControls/*.{swift}'
         controls.resources 		= 	'SRKControls/*.{xib}'
     end
 	
