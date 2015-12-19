@@ -28,7 +28,7 @@ public class ComboTextField_iPad: UITextField {
 	weak internal var delegateForComboTextField:ComboTextField_iPad_delegate?
 	var objComboTextFieldVCtr_iPad: ComboTextFieldVCtr_iPad?
 	
-	func showOptions() {
+	public func showOptions() {
 		self.objComboTextFieldVCtr_iPad = ComboTextFieldVCtr_iPad()
 		self.objComboTextFieldVCtr_iPad?.modalPresentationStyle = .Popover
 		self.objComboTextFieldVCtr_iPad?.refComboTextField_iPad = self

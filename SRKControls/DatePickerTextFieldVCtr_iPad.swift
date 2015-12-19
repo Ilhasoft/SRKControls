@@ -32,7 +32,7 @@ public class DatePickerTextField_iPad: UITextField {
 	weak internal var delegateForDatePickerTextField:DatePickerTextField_iPad_delegate?
 	var objDatePickerTextFieldVCtr_iPad: DatePickerTextFieldVCtr_iPad?
 	
-	func showOptions() {
+	public func showOptions() {
 		self.objDatePickerTextFieldVCtr_iPad = DatePickerTextFieldVCtr_iPad()
 		self.objDatePickerTextFieldVCtr_iPad?.modalPresentationStyle = .Popover
 		self.objDatePickerTextFieldVCtr_iPad?.refDatePickerTextField = self
