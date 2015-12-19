@@ -33,16 +33,27 @@ public class DatePickerTextField_iPad: UITextField {
 	var objDatePickerTextFieldVCtr_iPad: DatePickerTextFieldVCtr_iPad?
 	
 	public func showOptions() {
-		self.objDatePickerTextFieldVCtr_iPad = DatePickerTextFieldVCtr_iPad()
-		self.objDatePickerTextFieldVCtr_iPad?.modalPresentationStyle = .Popover
-		self.objDatePickerTextFieldVCtr_iPad?.refDatePickerTextField = self
-		if let btn = self.delegateForDatePickerTextField?.datePickerTextFieldFromBarButton(self) {
-			self.objDatePickerTextFieldVCtr_iPad?.popoverPresentationController?.barButtonItem = btn
-		} else {
-			self.objDatePickerTextFieldVCtr_iPad?.popoverPresentationController?.sourceView = self.delegateForDatePickerTextField?.datePickerTextFieldPresentingViewController(self).view
-			self.objDatePickerTextFieldVCtr_iPad?.popoverPresentationController?.sourceRect = (self.delegateForDatePickerTextField?.datePickerTextFieldRectFromWhereToPresent(self))!
+		let podBundle = NSBundle(forClass: self.classForCoder)
+		if let bundleURL = podBundle.URLForResource("SRKControls", withExtension: "bundle") {
+			if let bundle = NSBundle(URL: bundleURL) {
+				self.objDatePickerTextFieldVCtr_iPad = DatePickerTextFieldVCtr_iPad(nibName: "DatePickerTextFieldVCtr_iPad", bundle: bundle)
+				self.objDatePickerTextFieldVCtr_iPad?.modalPresentationStyle = .Popover
+				self.objDatePickerTextFieldVCtr_iPad?.refDatePickerTextField = self
+				if let btn = self.delegateForDatePickerTextField?.datePickerTextFieldFromBarButton(self) {
+					self.objDatePickerTextFieldVCtr_iPad?.popoverPresentationController?.barButtonItem = btn
+				} else {
+					self.objDatePickerTextFieldVCtr_iPad?.popoverPresentationController?.sourceView = self.delegateForDatePickerTextField?.datePickerTextFieldPresentingViewController(self).view
+					self.objDatePickerTextFieldVCtr_iPad?.popoverPresentationController?.sourceRect = (self.delegateForDatePickerTextField?.datePickerTextFieldRectFromWhereToPresent(self))!
+				}
+				self.delegateForDatePickerTextField?.datePickerTextFieldPresentingViewController(self).presentViewController(self.objDatePickerTextFieldVCtr_iPad!, animated: true, completion: nil)
+			} else {
+				assertionFailure("Could not load the bundle")
+			}
+		} else  {
+			assertionFailure("Could not create a path to the bundle")
 		}
-		self.delegateForDatePickerTextField?.datePickerTextFieldPresentingViewController(self).presentViewController(self.objDatePickerTextFieldVCtr_iPad!, animated: true, completion: nil)
+		
+		
 	}
 }
 

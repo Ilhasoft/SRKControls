@@ -29,16 +29,25 @@ public class ComboTextField_iPad: UITextField {
 	var objComboTextFieldVCtr_iPad: ComboTextFieldVCtr_iPad?
 	
 	public func showOptions() {
-		self.objComboTextFieldVCtr_iPad = ComboTextFieldVCtr_iPad()
-		self.objComboTextFieldVCtr_iPad?.modalPresentationStyle = .Popover
-		self.objComboTextFieldVCtr_iPad?.refComboTextField_iPad = self
-		if let btn = self.delegateForComboTextField?.comboTextFieldFromBarButton(self) {
-			self.objComboTextFieldVCtr_iPad?.popoverPresentationController?.barButtonItem = btn
-		} else {
-			self.objComboTextFieldVCtr_iPad?.popoverPresentationController?.sourceView = self.delegateForComboTextField?.comboTextFieldPresentingViewController(self).view
-			self.objComboTextFieldVCtr_iPad?.popoverPresentationController?.sourceRect = (self.delegateForComboTextField?.comboTextFieldRectFromWhereToPresent(self))!
+		let podBundle = NSBundle(forClass: self.classForCoder)
+		if let bundleURL = podBundle.URLForResource("SRKControls", withExtension: "bundle") {
+			if let bundle = NSBundle(URL: bundleURL) {
+				self.objComboTextFieldVCtr_iPad = ComboTextFieldVCtr_iPad(nibName: "ComboTextFieldVCtr_iPad", bundle: bundle)
+				self.objComboTextFieldVCtr_iPad?.modalPresentationStyle = .Popover
+				self.objComboTextFieldVCtr_iPad?.refComboTextField_iPad = self
+				if let btn = self.delegateForComboTextField?.comboTextFieldFromBarButton(self) {
+					self.objComboTextFieldVCtr_iPad?.popoverPresentationController?.barButtonItem = btn
+				} else {
+					self.objComboTextFieldVCtr_iPad?.popoverPresentationController?.sourceView = self.delegateForComboTextField?.comboTextFieldPresentingViewController(self).view
+					self.objComboTextFieldVCtr_iPad?.popoverPresentationController?.sourceRect = (self.delegateForComboTextField?.comboTextFieldRectFromWhereToPresent(self))!
+				}
+				self.delegateForComboTextField?.comboTextFieldPresentingViewController(self).presentViewController(self.objComboTextFieldVCtr_iPad!, animated: true, completion: nil)
+			} else {
+				assertionFailure("Could not load the bundle")
+			}
+		} else  {
+			assertionFailure("Could not create a path to the bundle")
 		}
-		self.delegateForComboTextField?.comboTextFieldPresentingViewController(self).presentViewController(self.objComboTextFieldVCtr_iPad!, animated: true, completion: nil)
 	}
 }
 
