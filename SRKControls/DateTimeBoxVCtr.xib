@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DatePickerTextFieldVCtr_iPad" customModule="SRKControls" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DateTimeBoxVCtr" customModule="Example" customModuleProvider="target">
             <connections>
                 <outlet property="pickerView" destination="XID-ST-4pZ" id="kmZ-0c-PhJ"/>
                 <outlet property="toolBar" destination="Ujw-0T-bvi" id="Nc9-Pf-iyl"/>
