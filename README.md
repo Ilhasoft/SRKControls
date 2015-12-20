@@ -176,24 +176,24 @@ Custom controls to turn UITextfields into item-selection with picker and date-se
 
 ***Example Screenshot 1: Screen-shot indicates noraml textfields but with different class***
 
-[Example Screen-shot 1](https://github.com/sag333ar/SRKControls/blob/master/ScreenShots/SRKControls%20with%20normal%20appearance.png?raw=true)
+![Example Screen-shot 1](https://github.com/sag333ar/SRKControls/blob/master/ScreenShots/SRKControls%20with%20normal%20appearance.png?raw=true)
 
 ---
 
 ***Example Screenshot 2: Screen-shot indicates Combo-picker example***
 
-[Example Screen-shot 2](https://github.com/sag333ar/SRKControls/blob/master/ScreenShots/SRKControls%20-%20SRKComboBox.png?raw=true)
+![Example Screen-shot 2](https://github.com/sag333ar/SRKControls/blob/master/ScreenShots/SRKControls%20-%20SRKComboBox.png?raw=true)
 
 ---
 
 ***Example Screenshot 3: Screen-shot indicates Date-picker example***
 
-[Example Screenshot 3](https://github.com/sag333ar/SRKControls/blob/master/ScreenShots/SRKControls%20-%20SRKDateTimeBox%20-%20Date%20Picker.png?raw=true)
+![Example Screenshot 3](https://github.com/sag333ar/SRKControls/blob/master/ScreenShots/SRKControls%20-%20SRKDateTimeBox%20-%20Date%20Picker.png?raw=true)
 
 ---
 
 ***Example Screenshot 4: Screen-shot indicates time-picker example***
 
-[Example Screenshot 4](https://github.com/sag333ar/SRKControls/blob/master/ScreenShots/SRKControls%20-%20SRKDateTimeBox%20-%20Time%20Picker.png?raw=true)
+![Example Screenshot 4](https://github.com/sag333ar/SRKControls/blob/master/ScreenShots/SRKControls%20-%20SRKDateTimeBox%20-%20Time%20Picker.png?raw=true)
 
 ---
