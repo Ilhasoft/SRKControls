@@ -3,30 +3,44 @@ Custom controls to turn UITextfields into item-selection with picker and date-se
 
 ---
 
-***Step 1. *** `pod 'SRKControls', '~> 3.0.1'`
+***Step 1.*** `pod 'SRKControls', '~> 3.0.1'`
 
 ---
 
-***Step 2. *** After above pod-line, add line `use_frameworks!`
+***Step 2.*** After above pod-line, add line `use_frameworks!`
 
 ---
 
-***Step 3. *** `pod install`
+***Step 3.*** `pod install`
 
 ---
 
-***Step 4. *** Go to your view controller & `import SRKControls`
+***Step 4.*** Go to your `ViewController.swift` & `import SRKControls`
 
 ---
 
-***Step 5. *** Add `UITextFieldDelegate`, `SRKComboBoxDelegate` and / or `SRKDateTimeBoxDelegate` as per your need.
+***Step 5.*** Go to your `ViewController.xib` or `Main.Storyboard`, drag & drop `UITextField` object on user-interface. Connect `delegate` of that textField-object.
 
 ---
 
-***Step 6. *** Put following lines of code
+***Step 6.*** Change textField-Object class to `SRKComboBox` or `SRKDateTimeBox` as per your need. Also have an `IBOutlet` Connection to your `ViewController`.
+
+---
+
+***Step 7.*** Add `UITextFieldDelegate`, `SRKComboBoxDelegate` and / or `SRKDateTimeBoxDelegate` as per your need.
+
+---
+
+***Step 8.*** Put following lines of code
 
 
 ```Swift
+
+	// Some sample objects.
+	@IBOutlet weak var myComboBox:SRKComboBox!
+	@IBOutlet weak var myDateBox:SRKDateTimeBox!
+	@IBOutlet weak var myTimeBox:SRKDateTimeBox!
+	
 	// Some sample array
 	let arrayForComboBox = ["Sagar", "Sagar R. Kothari", "Kothari", "sag333ar", "sag333ar.github.io", "samurai", "jack", "cartoon", "network"]
 	
@@ -157,5 +171,29 @@ Custom controls to turn UITextfields into item-selection with picker and date-se
 		print("Let's do some action here")
 	}
 ```
+
+---
+
+***Example Screenshot 1: Screen-shot indicates noraml textfields but with different class***
+
+[Example Screen-shot 1](https://github.com/sag333ar/SRKControls/blob/master/ScreenShots/SRKControls%20with%20normal%20appearance.png?raw=true)
+
+---
+
+***Example Screenshot 2: Screen-shot indicates Combo-picker example***
+
+[Example Screen-shot 2](https://github.com/sag333ar/SRKControls/blob/master/ScreenShots/SRKControls%20-%20SRKComboBox.png?raw=true)
+
+---
+
+***Example Screenshot 3: Screen-shot indicates Date-picker example***
+
+[Example Screenshot 3](https://github.com/sag333ar/SRKControls/blob/master/ScreenShots/SRKControls%20-%20SRKDateTimeBox%20-%20Date%20Picker.png?raw=true)
+
+---
+
+***Example Screenshot 4: Screen-shot indicates time-picker example***
+
+[Example Screenshot 4](https://github.com/sag333ar/SRKControls/blob/master/ScreenShots/SRKControls%20-%20SRKDateTimeBox%20-%20Time%20Picker.png?raw=true)
 
 ---
