@@ -1,34 +1,29 @@
-# SRKControls
-Custom controls to turn UITextfields into item-selection with picker and date-selections.
+//
+//  ViewController.swift
+//  Example
+//
+//  Created by Sagar on 12/19/15.
+//  Copyright © 2015 Sagar R. Kothari. All rights reserved.
+//
 
----
+import UIKit
+import SRKControls
 
-***Step 1. *** `pod 'SRKControls', '~> 3.0.1'`
+class ViewController: UIViewController, SRKComboBoxDelegate, SRKDateTimeBoxDelegate, UITextFieldDelegate {
 
----
-
-***Step 2. *** After above pod-line, add line `use_frameworks!`
-
----
-
-***Step 3. *** `pod install`
-
----
-
-***Step 4. *** Go to your view controller & `import SRKControls`
-
----
-
-***Step 5. *** Add `UITextFieldDelegate`, `SRKComboBoxDelegate` and / or `SRKDateTimeBoxDelegate` as per your need.
-
----
-
-***Step 6. *** Put following lines of code
-
-
-```Swift
-	// Some sample array
+	@IBOutlet weak var myComboBox:SRKComboBox!
+	@IBOutlet weak var myDateBox:SRKDateTimeBox!
+	@IBOutlet weak var myTimeBox:SRKDateTimeBox!
+	
 	let arrayForComboBox = ["Sagar", "Sagar R. Kothari", "Kothari", "sag333ar", "sag333ar.github.io", "samurai", "jack", "cartoon", "network"]
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+	}
+
+	override func didReceiveMemoryWarning() {
+		super.didReceiveMemoryWarning()
+	}
 	
 	//MARK:- UITextFieldDelegate
 	
@@ -156,6 +151,5 @@ Custom controls to turn UITextfields into item-selection with picker and date-se
 	func dateTimeBoxDidTappedDone(textField:SRKDateTimeBox) {
 		print("Let's do some action here")
 	}
-```
+}
 
----

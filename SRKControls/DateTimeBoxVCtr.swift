@@ -28,7 +28,7 @@ import UIKit
 	func dateTimeBoxDidTappedDone(textField:SRKDateTimeBox)
 }
 
-public class SRKDateTimeBox: UITextField {
+@objc public class SRKDateTimeBox: UITextField {
 	public weak var delegateForDateTimeBox:SRKDateTimeBoxDelegate?
 	var objDateTimeBoxVCtr: DateTimeBoxVCtr?
 	
@@ -56,13 +56,13 @@ public class SRKDateTimeBox: UITextField {
 	}
 }
 
-class DateTimeBoxVCtr: UIViewController, UIPopoverPresentationControllerDelegate {
+@objc public class DateTimeBoxVCtr: UIViewController, UIPopoverPresentationControllerDelegate {
 	
 	@IBOutlet weak var pickerView: UIDatePicker!
 	@IBOutlet weak var toolBar: UIToolbar!
 	weak var refSRKDateTimeBox:SRKDateTimeBox?
 	
-	override func viewDidLoad() {
+	override public func viewDidLoad() {
 		super.viewDidLoad()
 		self.preferredContentSize = CGSizeMake(320, 260)
 		if let clr = self.refSRKDateTimeBox?.delegateForDateTimeBox?.dateTimeBoxTintColor(self.refSRKDateTimeBox!) {
@@ -84,25 +84,25 @@ class DateTimeBoxVCtr: UIViewController, UIPopoverPresentationControllerDelegate
 		self.pickerView.datePickerMode = (self.refSRKDateTimeBox?.delegateForDateTimeBox?.dateTimeBoxType(self.refSRKDateTimeBox!))!
 	}
 	
-	override func didReceiveMemoryWarning() {
+	override public func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 	}
 	
-	@IBAction func dateChanged(sender: UIDatePicker) {
+	@IBAction public func dateChanged(sender: UIDatePicker) {
 		self.refSRKDateTimeBox?.delegateForDateTimeBox?.dateTimeBox(self.refSRKDateTimeBox!, didSelectDate: sender.date)
 	}
 	
-	@IBAction func btnDoneTapped(sender: UIBarButtonItem) {
+	@IBAction public func btnDoneTapped(sender: UIBarButtonItem) {
 		self.refSRKDateTimeBox?.delegateForDateTimeBox?.dateTimeBoxDidTappedDone(self.refSRKDateTimeBox!)
 		self.dismissViewControllerAnimated(true, completion: nil)
 	}
 	
-	@IBAction func btnCancelTapped(sender: UIBarButtonItem) {
+	@IBAction public func btnCancelTapped(sender: UIBarButtonItem) {
 		self.refSRKDateTimeBox?.delegateForDateTimeBox?.dateTimeBoxDidTappedCancel(self.refSRKDateTimeBox!)
 		self.dismissViewControllerAnimated(true, completion: nil)
 	}
 	
-	func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+	public func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
 		return UIModalPresentationStyle.None
 	}
 }

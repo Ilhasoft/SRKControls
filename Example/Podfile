@@ -1,0 +1,4 @@
+target "Example" do
+	pod 'SRKControls'
+	use_frameworks!
+end

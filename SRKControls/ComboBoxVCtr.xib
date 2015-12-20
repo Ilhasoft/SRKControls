@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComboBoxVCtr" customModule="Example" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComboBoxVCtr" customModule="SRKControls" customModuleProvider="target">
             <connections>
                 <outlet property="pickerView" destination="SHF-kS-8f1" id="TuK-9D-Aoh"/>
                 <outlet property="toolBar" destination="I2D-zW-xE0" id="9uZ-CF-8GG"/>
