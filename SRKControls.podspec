@@ -3,7 +3,7 @@
 #
 
 Pod::Spec.new do |s|
-	s.version		=	'3.0.2'
+	s.version		=	'3.0.3'
 	s.name			=	'SRKControls'
     s.summary       =   'A Custom control to turn UITextfield to item-picker & date-picker.'
 	s.authors		=	{ "Sagar Kothari" => "sag333ar@gmail.com" }
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
         controls.source_files		=	'SRKControls/*.{swift}'
         controls.resource_bundles 	= {
 									    'SRKControls' => [
-									        'SRKControls/*.{xib}, README.md'
+									        'SRKControls/*.{xib}'
 									    ]
   									  }
     end
