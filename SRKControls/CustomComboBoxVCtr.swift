@@ -10,21 +10,21 @@ import UIKit
 
 @objc public protocol SRKCustomComboBoxDelegate : NSObjectProtocol {
 	
-	func comboBox(textField:SRKCustomComboBox, didSelect row:Int)
-	func comboBoxNumberOfRows(textField:SRKCustomComboBox) -> Int
-	func comboBoxHeightForRows(textField:SRKCustomComboBox) -> CGFloat
-	func comboBox(textField:SRKCustomComboBox, viewFor row:Int, reusingView view: UIView?) -> UIView
+	func customComboBox(textField:SRKCustomComboBox, didSelect row:Int)
+	func customComboBoxNumberOfRows(textField:SRKCustomComboBox) -> Int
+	func customComboBoxHeightForRows(textField:SRKCustomComboBox) -> CGFloat
+	func customComboBox(textField:SRKCustomComboBox, viewFor row:Int, reusingView view: UIView?) -> UIView
 	
-	func comboBoxPresentingViewController(textField:SRKCustomComboBox) -> UIViewController
-	func comboBoxRectFromWhereToPresent(textField:SRKCustomComboBox) -> CGRect
+	func customComboBoxPresentingViewController(textField:SRKCustomComboBox) -> UIViewController
+	func customComboBoxRectFromWhereToPresent(textField:SRKCustomComboBox) -> CGRect
 	
-	func comboBoxFromBarButton(textField:SRKCustomComboBox) -> UIBarButtonItem?
+	func customComboBoxFromBarButton(textField:SRKCustomComboBox) -> UIBarButtonItem?
 	
-	func comboBoxTintColor(textField:SRKCustomComboBox) -> UIColor
-	func comboBoxToolbarColor(textField:SRKCustomComboBox) -> UIColor
+	func customComboBoxTintColor(textField:SRKCustomComboBox) -> UIColor
+	func customComboBoxToolbarColor(textField:SRKCustomComboBox) -> UIColor
 	
-	func comboBoxDidTappedCancel(textField:SRKCustomComboBox)
-	func comboBoxDidTappedDone(textField:SRKCustomComboBox)
+	func customComboBoxDidTappedCancel(textField:SRKCustomComboBox)
+	func customComboBoxDidTappedDone(textField:SRKCustomComboBox)
 }
 
 @objc public class SRKCustomComboBox: UITextField {
@@ -39,13 +39,13 @@ import UIKit
 				self.objCustomComboBoxVCtr?.modalPresentationStyle = .Popover
 				self.objCustomComboBoxVCtr?.popoverPresentationController?.delegate = self.objCustomComboBoxVCtr
 				self.objCustomComboBoxVCtr?.refSRKCustomComboBox = self
-				if let btn = self.delegateForComboBox?.comboBoxFromBarButton(self) {
+				if let btn = self.delegateForComboBox?.customComboBoxFromBarButton(self) {
 					self.objCustomComboBoxVCtr?.popoverPresentationController?.barButtonItem = btn
 				} else {
-					self.objCustomComboBoxVCtr?.popoverPresentationController?.sourceView = self.delegateForComboBox?.comboBoxPresentingViewController(self).view
-					self.objCustomComboBoxVCtr?.popoverPresentationController?.sourceRect = self.delegateForComboBox!.comboBoxRectFromWhereToPresent(self)
+					self.objCustomComboBoxVCtr?.popoverPresentationController?.sourceView = self.delegateForComboBox?.customComboBoxPresentingViewController(self).view
+					self.objCustomComboBoxVCtr?.popoverPresentationController?.sourceRect = self.delegateForComboBox!.customComboBoxRectFromWhereToPresent(self)
 				}
-				self.delegateForComboBox?.comboBoxPresentingViewController(self).presentViewController(self.objCustomComboBoxVCtr!, animated: true, completion: nil)
+				self.delegateForComboBox?.customComboBoxPresentingViewController(self).presentViewController(self.objCustomComboBoxVCtr!, animated: true, completion: nil)
 			} else {
 				assertionFailure("Could not load the bundle")
 			}
@@ -64,15 +64,15 @@ import UIKit
 	override public func viewDidLoad() {
 		super.viewDidLoad()
 		self.preferredContentSize = CGSizeMake(320, 260)
-		if let clr = self.refSRKCustomComboBox?.delegateForComboBox?.comboBoxTintColor(self.refSRKCustomComboBox!) {
+		if let clr = self.refSRKCustomComboBox?.delegateForComboBox?.customComboBoxTintColor(self.refSRKCustomComboBox!) {
 			self.toolBar.tintColor = clr
 		}
 		
-		if let clr = self.refSRKCustomComboBox?.delegateForComboBox?.comboBoxToolbarColor(self.refSRKCustomComboBox!) {
+		if let clr = self.refSRKCustomComboBox?.delegateForComboBox?.customComboBoxToolbarColor(self.refSRKCustomComboBox!) {
 			self.toolBar.backgroundColor = clr
 		}
 		
-		self.refSRKCustomComboBox!.delegateForComboBox?.comboBox(self.refSRKCustomComboBox!, didSelect: 0)
+		self.refSRKCustomComboBox!.delegateForComboBox?.customComboBox(self.refSRKCustomComboBox!, didSelect: 0)
 	}
 	
 	override public func didReceiveMemoryWarning() {
@@ -80,19 +80,19 @@ import UIKit
 	}
 	
 	public func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-		self.refSRKCustomComboBox!.delegateForComboBox?.comboBox(self.refSRKCustomComboBox!, didSelect: row)
+		self.refSRKCustomComboBox!.delegateForComboBox?.customComboBox(self.refSRKCustomComboBox!, didSelect: row)
 	}
 	
 	public func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-		return (self.refSRKCustomComboBox?.delegateForComboBox?.comboBoxNumberOfRows(self.refSRKCustomComboBox!))!
+		return (self.refSRKCustomComboBox?.delegateForComboBox?.customComboBoxNumberOfRows(self.refSRKCustomComboBox!))!
 	}
 	
 	public func pickerView(pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-		return (self.refSRKCustomComboBox?.delegateForComboBox?.comboBoxHeightForRows(self.refSRKCustomComboBox!))!
+		return (self.refSRKCustomComboBox?.delegateForComboBox?.customComboBoxHeightForRows(self.refSRKCustomComboBox!))!
 	}
 	
 	public func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView {
-		return (self.refSRKCustomComboBox!.delegateForComboBox?.comboBox(self.refSRKCustomComboBox!, viewFor: row, reusingView: view))!
+		return (self.refSRKCustomComboBox!.delegateForComboBox?.customComboBox(self.refSRKCustomComboBox!, viewFor: row, reusingView: view))!
 	}
 	
 	public func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -100,12 +100,12 @@ import UIKit
 	}
 	
 	@IBAction public func btnDoneTapped(sender: UIBarButtonItem) {
-		self.refSRKCustomComboBox?.delegateForComboBox?.comboBoxDidTappedDone(self.refSRKCustomComboBox!)
+		self.refSRKCustomComboBox?.delegateForComboBox?.customComboBoxDidTappedDone(self.refSRKCustomComboBox!)
 		self.dismissViewControllerAnimated(true, completion: nil)
 	}
 	
 	@IBAction public func btnCancelTapped(sender: UIBarButtonItem) {
-		self.refSRKCustomComboBox?.delegateForComboBox?.comboBoxDidTappedCancel(self.refSRKCustomComboBox!)
+		self.refSRKCustomComboBox?.delegateForComboBox?.customComboBoxDidTappedCancel(self.refSRKCustomComboBox!)
 		self.dismissViewControllerAnimated(true, completion: nil)
 	}
 	
