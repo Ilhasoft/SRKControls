@@ -2,10 +2,8 @@
 
 > Custom controls to turn UITextfields into item-selection with picker and date-selections.
 
-[![Swift Version][swift-image]][swift-url]
-[![Build Status][travis-image]][travis-url]
-[![License][license-image]][license-url]
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/EZSwiftExtensions.svg)](https://img.shields.io/cocoapods/v/LFAlertController.svg)  
+
 [![Platform](https://img.shields.io/cocoapods/p/LFAlertController.svg?style=flat)](http://cocoapods.org/pods/LFAlertController)
 
 Using this library, one can convert `UITextfield` objects in-to a `combo-box-style-item-picker` or `date-time-picker`.
