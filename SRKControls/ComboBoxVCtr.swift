@@ -30,7 +30,7 @@ import UIKit
 	var objComboBoxVCtr: ComboBoxVCtr?
 	
 	public func showOptions() {
-		let podBundle = NSBundle(forClass: self.classForCoder)
+		let podBundle = NSBundle(forClass: SRKComboBox.self)
 		if let bundleURL = podBundle.URLForResource("SRKControls", withExtension: "bundle") {
 			if let bundle = NSBundle(URL: bundleURL) {
 				self.objComboBoxVCtr = ComboBoxVCtr(nibName: "ComboBoxVCtr", bundle: bundle)
