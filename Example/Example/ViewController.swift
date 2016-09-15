@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SRKControls
 
 class ViewController: UIViewController, SRKComboBoxDelegate, SRKDateTimeBoxDelegate, UITextFieldDelegate {
 
@@ -27,7 +26,7 @@ class ViewController: UIViewController, SRKComboBoxDelegate, SRKDateTimeBoxDeleg
 
 	// MARK:- UITextFieldDelegate
 
-	func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+	func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
 		if let txt = textField as? SRKComboBox {
 			txt.delegateForComboBox = self
 			txt.showOptions()
@@ -43,13 +42,13 @@ class ViewController: UIViewController, SRKComboBoxDelegate, SRKDateTimeBoxDeleg
 
 	// MARK:- SRKComboBoxDelegate
 
-	func comboBox(textField: SRKComboBox, didSelectRow row: Int) {
+	func comboBox(_ textField: SRKComboBox, didSelectRow row: Int) {
 		if textField == self.myComboBox {
 			self.myComboBox.text = self.arrayForComboBox[row]
 		}
 	}
 
-	func comboBoxNumberOfRows(textField: SRKComboBox) -> Int {
+	func comboBoxNumberOfRows(_ textField: SRKComboBox) -> Int {
 		if textField == self.myComboBox {
 			return self.arrayForComboBox.count
 		} else {
@@ -57,7 +56,7 @@ class ViewController: UIViewController, SRKComboBoxDelegate, SRKDateTimeBoxDeleg
 		}
 	}
 
-	func comboBox(textField: SRKComboBox, textForRow row: Int) -> String {
+	func comboBox(_ textField: SRKComboBox, textForRow row: Int) -> String {
 		if textField == self.myComboBox {
 			return self.arrayForComboBox[row]
 		} else {
@@ -65,90 +64,90 @@ class ViewController: UIViewController, SRKComboBoxDelegate, SRKDateTimeBoxDeleg
 		}
 	}
 
-	func comboBoxPresentingViewController(textField: SRKComboBox) -> UIViewController {
+	func comboBoxPresentingViewController(_ textField: SRKComboBox) -> UIViewController {
 		return self
 	}
 
-	func comboBoxRectFromWhereToPresent(textField: SRKComboBox) -> CGRect {
+	func comboBoxRectFromWhereToPresent(_ textField: SRKComboBox) -> CGRect {
 		return textField.frame
 	}
 
-	func comboBoxFromBarButton(textField: SRKComboBox) -> UIBarButtonItem? {
+	func comboBoxFromBarButton(_ textField: SRKComboBox) -> UIBarButtonItem? {
 		return nil
 	}
 
-	func comboBoxTintColor(textField: SRKComboBox) -> UIColor {
-		return UIColor.blackColor()
+	func comboBoxTintColor(_ textField: SRKComboBox) -> UIColor {
+		return UIColor.black
 	}
 
-	func comboBoxToolbarColor(textField: SRKComboBox) -> UIColor {
-		return UIColor.whiteColor()
+	func comboBoxToolbarColor(_ textField: SRKComboBox) -> UIColor {
+		return UIColor.white
 	}
 
-	func comboBoxDidTappedCancel(textField: SRKComboBox) {
+	func comboBoxDidTappedCancel(_ textField: SRKComboBox) {
 		textField.text = ""
 	}
 
-	func comboBoxDidTappedDone(textField: SRKComboBox) {
+	func comboBoxDidTappedDone(_ textField: SRKComboBox) {
 		print("Let's do some action here")
 	}
 
 	// MARK:- SRKDateTimeBoxDelegate
 
-	func dateTimeBox(textField: SRKDateTimeBox, didSelectDate date: NSDate) {
-		let df = NSDateFormatter()
+	func dateTimeBox(_ textField: SRKDateTimeBox, didSelectDate date: Date) {
+		let df = DateFormatter()
 		if textField == self.myDateBox {
 			df.dateFormat = "dd-MMM-yyyy"
-			self.myDateBox.text = df.stringFromDate(date)
+			self.myDateBox.text = df.string(from: date as Date)
 		} else if textField == self.myTimeBox {
 			df.dateFormat = "HH:mm"
-			self.myTimeBox.text = df.stringFromDate(date)
+			self.myTimeBox.text = df.string(from: date as Date)
 		}
 	}
 
-	func dateTimeBoxType(textField: SRKDateTimeBox) -> UIDatePickerMode {
+	func dateTimeBoxType(_ textField: SRKDateTimeBox) -> UIDatePickerMode {
 		if textField == self.myDateBox {
-			return UIDatePickerMode.Date
+			return UIDatePickerMode.date
 		} else if textField == self.myTimeBox {
-			return UIDatePickerMode.Time
+			return UIDatePickerMode.time
 		} else {
-			return UIDatePickerMode.Date
+			return UIDatePickerMode.date
 		}
 	}
 
-	func dateTimeBoxMinimumDate(textField: SRKDateTimeBox) -> NSDate? {
+	func dateTimeBoxMinimumDate(_ textField: SRKDateTimeBox) -> Date? {
 		return nil
 	}
 
-	func dateTimeBoxMaximumDate(textField: SRKDateTimeBox) -> NSDate? {
+	func dateTimeBoxMaximumDate(_ textField: SRKDateTimeBox) -> Date? {
 		return nil
 	}
 
-	func dateTimeBoxPresentingViewController(textField: SRKDateTimeBox) -> UIViewController {
+	func dateTimeBoxPresentingViewController(_ textField: SRKDateTimeBox) -> UIViewController {
 		return self
 	}
 
-	func dateTimeBoxRectFromWhereToPresent(textField: SRKDateTimeBox) -> CGRect {
+	func dateTimeBoxRectFromWhereToPresent(_ textField: SRKDateTimeBox) -> CGRect {
 		return textField.frame
 	}
 
-	func dateTimeBoxFromBarButton(textField: SRKDateTimeBox) -> UIBarButtonItem? {
+	func dateTimeBoxFromBarButton(_ textField: SRKDateTimeBox) -> UIBarButtonItem? {
 		return nil
 	}
 
-	func dateTimeBoxTintColor(textField: SRKDateTimeBox) -> UIColor {
-		return UIColor.blackColor()
+	func dateTimeBoxTintColor(_ textField: SRKDateTimeBox) -> UIColor {
+		return UIColor.black
 	}
 
-	func dateTimeBoxToolbarColor(textField: SRKDateTimeBox) -> UIColor {
-		return UIColor.whiteColor()
+	func dateTimeBoxToolbarColor(_ textField: SRKDateTimeBox) -> UIColor {
+		return UIColor.white
 	}
 
-	func dateTimeBoxDidTappedCancel(textField: SRKDateTimeBox) {
+	func dateTimeBoxDidTappedCancel(_ textField: SRKDateTimeBox) {
 		textField.text = ""
 	}
 
-	func dateTimeBoxDidTappedDone(textField: SRKDateTimeBox) {
+	func dateTimeBoxDidTappedDone(_ textField: SRKDateTimeBox) {
 		print("Let's do some action here")
 	}
 

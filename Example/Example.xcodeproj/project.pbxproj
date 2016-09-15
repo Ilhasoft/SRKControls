@@ -7,16 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B61FA761D8AE9E100C294A0 /* ComboBoxVCtr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B61FA701D8AE9E100C294A0 /* ComboBoxVCtr.swift */; };
+		1B61FA771D8AE9E100C294A0 /* ComboBoxVCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B61FA711D8AE9E100C294A0 /* ComboBoxVCtr.xib */; };
+		1B61FA781D8AE9E100C294A0 /* CustomComboBoxVCtr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B61FA721D8AE9E100C294A0 /* CustomComboBoxVCtr.swift */; };
+		1B61FA791D8AE9E100C294A0 /* CustomComboBoxVCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B61FA731D8AE9E100C294A0 /* CustomComboBoxVCtr.xib */; };
+		1B61FA7A1D8AE9E100C294A0 /* DateTimeBoxVCtr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B61FA741D8AE9E100C294A0 /* DateTimeBoxVCtr.swift */; };
+		1B61FA7B1D8AE9E100C294A0 /* DateTimeBoxVCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B61FA751D8AE9E100C294A0 /* DateTimeBoxVCtr.xib */; };
 		1BFB261B1C2584A80000892C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB261A1C2584A80000892C /* AppDelegate.swift */; };
 		1BFB261D1C2584A80000892C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB261C1C2584A80000892C /* ViewController.swift */; };
 		1BFB26201C2584A80000892C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BFB261E1C2584A80000892C /* Main.storyboard */; };
 		1BFB26221C2584A80000892C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BFB26211C2584A80000892C /* Assets.xcassets */; };
 		1BFB26251C2584A80000892C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BFB26231C2584A80000892C /* LaunchScreen.storyboard */; };
-		375C047E4569820E12341249 /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9BEE766B1EE8822A2447593 /* Pods_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		198AFF2BF2E5A0C4EFBA80EE /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		1B61FA701D8AE9E100C294A0 /* ComboBoxVCtr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComboBoxVCtr.swift; sourceTree = "<group>"; };
+		1B61FA711D8AE9E100C294A0 /* ComboBoxVCtr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComboBoxVCtr.xib; sourceTree = "<group>"; };
+		1B61FA721D8AE9E100C294A0 /* CustomComboBoxVCtr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomComboBoxVCtr.swift; sourceTree = "<group>"; };
+		1B61FA731D8AE9E100C294A0 /* CustomComboBoxVCtr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomComboBoxVCtr.xib; sourceTree = "<group>"; };
+		1B61FA741D8AE9E100C294A0 /* DateTimeBoxVCtr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimeBoxVCtr.swift; sourceTree = "<group>"; };
+		1B61FA751D8AE9E100C294A0 /* DateTimeBoxVCtr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateTimeBoxVCtr.xib; sourceTree = "<group>"; };
 		1BFB26171C2584A80000892C /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BFB261A1C2584A80000892C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BFB261C1C2584A80000892C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,8 +34,6 @@
 		1BFB26211C2584A80000892C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BFB26241C2584A80000892C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1BFB26261C2584A80000892C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7A157B376DC1A847250B5783 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
-		B9BEE766B1EE8822A2447593 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,20 +41,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				375C047E4569820E12341249 /* Pods_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B61FA6F1D8AE9E100C294A0 /* SRKControls */ = {
+			isa = PBXGroup;
+			children = (
+				1B61FA701D8AE9E100C294A0 /* ComboBoxVCtr.swift */,
+				1B61FA711D8AE9E100C294A0 /* ComboBoxVCtr.xib */,
+				1B61FA721D8AE9E100C294A0 /* CustomComboBoxVCtr.swift */,
+				1B61FA731D8AE9E100C294A0 /* CustomComboBoxVCtr.xib */,
+				1B61FA741D8AE9E100C294A0 /* DateTimeBoxVCtr.swift */,
+				1B61FA751D8AE9E100C294A0 /* DateTimeBoxVCtr.xib */,
+			);
+			name = SRKControls;
+			path = ../../SRKControls;
+			sourceTree = "<group>";
+		};
 		1BFB260E1C2584A80000892C = {
 			isa = PBXGroup;
 			children = (
 				1BFB26191C2584A80000892C /* Example */,
 				1BFB26181C2584A80000892C /* Products */,
-				DC16ED20FBB6EC02A21E2675 /* Pods */,
-				722CD1E6C3014151961C9033 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,29 +82,13 @@
 			children = (
 				1BFB261A1C2584A80000892C /* AppDelegate.swift */,
 				1BFB261C1C2584A80000892C /* ViewController.swift */,
+				1B61FA6F1D8AE9E100C294A0 /* SRKControls */,
 				1BFB261E1C2584A80000892C /* Main.storyboard */,
 				1BFB26211C2584A80000892C /* Assets.xcassets */,
 				1BFB26231C2584A80000892C /* LaunchScreen.storyboard */,
 				1BFB26261C2584A80000892C /* Info.plist */,
 			);
 			path = Example;
-			sourceTree = "<group>";
-		};
-		722CD1E6C3014151961C9033 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B9BEE766B1EE8822A2447593 /* Pods_Example.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DC16ED20FBB6EC02A21E2675 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				198AFF2BF2E5A0C4EFBA80EE /* Pods-Example.debug.xcconfig */,
-				7A157B376DC1A847250B5783 /* Pods-Example.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,12 +98,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1BFB26291C2584A80000892C /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
-				8C5F6535833DC19E399A3B1F /* 📦 Check Pods Manifest.lock */,
 				1BFB26131C2584A80000892C /* Sources */,
 				1BFB26141C2584A80000892C /* Frameworks */,
 				1BFB26151C2584A80000892C /* Resources */,
-				B7534AEE009443F382C01BE0 /* 📦 Embed Pods Frameworks */,
-				4CACB904860C107F63BAB8DE /* 📦 Copy Pods Resources */,
 				4C71B5A0AFAE885E7BCF5441 /* Tailor */,
 			);
 			buildRules = (
@@ -124,6 +124,7 @@
 				TargetAttributes = {
 					1BFB26161C2584A80000892C = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -151,8 +152,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BFB26251C2584A80000892C /* LaunchScreen.storyboard in Resources */,
+				1B61FA791D8AE9E100C294A0 /* CustomComboBoxVCtr.xib in Resources */,
+				1B61FA771D8AE9E100C294A0 /* ComboBoxVCtr.xib in Resources */,
 				1BFB26221C2584A80000892C /* Assets.xcassets in Resources */,
 				1BFB26201C2584A80000892C /* Main.storyboard in Resources */,
+				1B61FA7B1D8AE9E100C294A0 /* DateTimeBoxVCtr.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,51 +177,6 @@
 			shellPath = /bin/sh;
 			shellScript = "if hash tailor 2>/dev/null; then\n  tailor\nelse\n  echo \"warning: Please install Tailor from https://tailor.sh\"\nfi";
 		};
-		4CACB904860C107F63BAB8DE /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Example/Pods-Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8C5F6535833DC19E399A3B1F /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		B7534AEE009443F382C01BE0 /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Example/Pods-Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -226,6 +185,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BFB261D1C2584A80000892C /* ViewController.swift in Sources */,
+				1B61FA761D8AE9E100C294A0 /* ComboBoxVCtr.swift in Sources */,
+				1B61FA7A1D8AE9E100C294A0 /* DateTimeBoxVCtr.swift in Sources */,
+				1B61FA781D8AE9E100C294A0 /* CustomComboBoxVCtr.swift in Sources */,
 				1BFB261B1C2584A80000892C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,25 +299,25 @@
 		};
 		1BFB262A1C2584A80000892C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 198AFF2BF2E5A0C4EFBA80EE /* Pods-Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sagarrkothari.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		1BFB262B1C2584A80000892C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A157B376DC1A847250B5783 /* Pods-Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sagarrkothari.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
