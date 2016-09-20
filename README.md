@@ -44,8 +44,8 @@ Check-out following screen-shots to understand behaviour and go through followin
 
 ## Requirements
 
-- iOS 7.0+
-- Xcode 7.3
+- iOS 9.0+
+- Xcode 8 (Sorry guys. Please use Xcode 8 now.)
 
 ## Installation
 
