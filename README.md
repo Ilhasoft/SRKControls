@@ -49,11 +49,13 @@ Check-out following screen-shots to understand behaviour and go through followin
 
 ## Installation
 
-***Step 1.*** `pod 'SRKControls', '~> 3.0.1'`
+***Step 1.*** `pod 'SRKControls', :git => 'https://github.com/sag333ar/SRKControls.git', :branch => 'master'`
 
-***Step 2.*** After above pod-line, add line `use_frameworks!`
+***Step 2.*** After/before above pod-line, add line `use_frameworks!`
 
 ***Step 3.*** `pod install`
+
+***Step 4.*** After installing above pods, while opening `yourProject.xcworkspace` Xcode8 may ask you for conversion. After conversion, you would be able to compile code. All the best.
 
 ## Usage example
 
